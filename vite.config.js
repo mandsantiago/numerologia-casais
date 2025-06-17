@@ -6,16 +6,23 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    sourcemap: true
+    sourcemap: true,
+    chunkSizeWarningLimit: 1500
   },
   server: {
-    port: 3000
+    port: 3000,
+    strictPort: true
   },
   optimizeDeps: {
     include: [
       'react',
       'react-dom',
       'react-router-dom'
-    ]
+    ],
+    esbuildOptions: {
+      supported: {
+        'top-level-await': true
+      }
+    }
   }
 })
