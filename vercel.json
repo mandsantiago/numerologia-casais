@@ -6,8 +6,8 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist",
-        "installCommand": "node vercel-build.js",
-        "buildCommand": "echo 'Build já executado pelo script'"
+        "installCommand": "npm install --legacy-peer-deps --prefer-offline --no-audit",
+        "buildCommand": "npm run build"
       }
     }
   ],
